@@ -1,0 +1,7 @@
+prebuilt_etc {
+    name: "init.target.giza.rc",
+    filename: "init.target.rc",
+    src: "init.target.giza.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
