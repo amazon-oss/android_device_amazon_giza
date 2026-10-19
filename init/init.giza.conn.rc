@@ -1,0 +1,25 @@
+# We don't use the insmod script for mt66xx since the
+# drivers require specific loading order based on signaling
+# from userspace.
+
+on boot
+    # WMT (common) module
+    insmod /vendor/lib/modules/mt66xx_common.ko
+
+# Will be set when wmt_loader has finished, then we can
+# load the other modules.
+on property:vendor.connsys.driver.ready=yes
+    insmod /vendor/lib/modules/mt66xx_bt.ko
+    insmod /vendor/lib/modules/mt66xx_wlan_adaptor.ko
+    insmod /vendor/lib/modules/mt66xx_wlan.ko
+
+service wmt_loader /vendor/bin/wmt_loader
+    class core
+    user system
+    group system
+    oneshot
+
+service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/
+    user system
+    group system
+    class core

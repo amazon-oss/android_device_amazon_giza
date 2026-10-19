@@ -5,3 +5,11 @@ prebuilt_etc {
     sub_dir: "init/hw",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "init.giza.conn.rc",
+    filename: "init.giza.conn.rc",
+    src: "init.giza.conn.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}

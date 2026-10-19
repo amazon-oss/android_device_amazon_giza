@@ -5,6 +5,9 @@
 
 DEVICE_PATH := device/amazon/giza
 
+# Bluetooth
+BOARD_MTK_BT_CHIP := MTK_CONSYS_MT8163
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := giza
 
@@ -23,6 +26,19 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1692696576
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+# Wi-Fi
+BOARD_WLAN_DEVICE := MediaTek
+BOARD_MEDIATEK_COMBO_CHIP := mt66xx
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mt66xx
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
+WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
+WIFI_DRIVER_FW_PATH_STA := "STA"
+WIFI_DRIVER_FW_PATH_AP := "AP"
+WIFI_DRIVER_FW_PATH_P2P := "P2P"
+WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wmtWifi"
+WIFI_DRIVER_STATE_ON := "1"
+WIFI_DRIVER_STATE_OFF := "0"
 
 # Inherit from mt8163-common
 include device/amazon/mt8163-common/BoardConfigCommon.mk

@@ -1,3 +1,5 @@
+import /vendor/etc/init/hw/init.giza.conn.rc
+
 service rpmb_svc /vendor/bin/rpmb_svc_disabled
     override
     class late_start

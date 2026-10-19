@@ -27,8 +27,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-service \
+    android.hardware.bluetooth@1.0-impl \
+    libbt-vendor
+
+PRODUCT_PACKAGES += \
+    mt66xx_bt
+
+# Connsys
+PRODUCT_PACKAGES += \
+    mt66xx_common
+
 # Init scripts
 PRODUCT_PACKAGES += \
+    init.giza.conn.rc \
     init.target.giza.rc
 
 # Screen
@@ -42,6 +56,19 @@ PRODUCT_SHIPPING_API_LEVEL := 22
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# Wi-Fi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service-lazy
+
+PRODUCT_PACKAGES += \
+    mt66xx_wlan
+
+PRODUCT_PACKAGES += \
+    WifiResOverlayGiza
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # Vendor partition
 TARGET_HAS_VENDOR_PARTITION := false

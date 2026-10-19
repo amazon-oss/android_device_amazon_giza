@@ -32,3 +32,11 @@ lib/libnvram.so:vendor/lib/libnvram.so
 lib/libnvram_daemon_callback.so:vendor/lib/libnvram_daemon_callback.so
 lib/libnvram_platform.so:vendor/lib/libnvram_platform.so
 lib/libnvramagentclient.so:vendor/lib/libnvramagentclient.so
+
+# WMT - from Amazon/karnak/karnak:9/PS7331.4463N/0031575863040:user/amz-p,release-keys
+vendor/bin/wmt_launcher|35bf3450c5fb1f08f2df30c82a795fae548c93b3
+vendor/bin/wmt_loader|1c838246b6029ed73a35a2e944020f71d47db026
+vendor/firmware/ROMv2_lm_patch_1_0_hdr.bin|a8258acd415c663f08e9ffda326069ddde33f05a
+vendor/firmware/ROMv2_lm_patch_1_1_hdr.bin|2d8cd43c2f22655eefde17850aff95300e94d71a
+vendor/firmware/WIFI_RAM_CODE_8163|78ba277d9b7af62f2b85e800123745eee6a1f277
+vendor/firmware/WMT_SOC.cfg|9ee55ee0c5b3437d0470599db530a4f33d6995cb
