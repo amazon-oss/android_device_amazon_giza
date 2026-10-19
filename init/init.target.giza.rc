@@ -1,5 +1,50 @@
 import /vendor/etc/init/hw/init.giza.conn.rc
 
+on post-fs-data
+    chmod 0660 /sys/class/misc/m_alsps_misc/alsactive
+    chmod 0660 /sys/class/misc/m_alsps_misc/alsdelay
+    chmod 0660 /sys/class/misc/m_alsps_misc/alsbatch
+    chmod 0660 /sys/class/misc/m_alsps_misc/alsflush
+
+    chown system system /sys/class/misc/m_alsps_misc/alsactive
+    chown system system /sys/class/misc/m_alsps_misc/alsdelay
+    chown system system /sys/class/misc/m_alsps_misc/alsbatch
+    chown system system /sys/class/misc/m_alsps_misc/alsflush
+
+    chmod 0660 /sys/class/misc/m_alsps_misc/psactive
+    chmod 0660 /sys/class/misc/m_alsps_misc/psdelay
+    chmod 0660 /sys/class/misc/m_alsps_misc/psbatch
+    chmod 0660 /sys/class/misc/m_alsps_misc/psflush
+
+    chown system system /sys/class/misc/m_alsps_misc/psactive
+    chown system system /sys/class/misc/m_alsps_misc/psdelay
+    chown system system /sys/class/misc/m_alsps_misc/psbatch
+    chown system system /sys/class/misc/m_alsps_misc/psflush
+
+    chmod 0660 /sys/class/misc/m_acc_misc/accenablenodata
+    chmod 0660 /sys/class/misc/m_acc_misc/accactive
+    chmod 0660 /sys/class/misc/m_acc_misc/accdelay
+    chmod 0660 /sys/class/misc/m_acc_misc/accbatch
+    chmod 0660 /sys/class/misc/m_acc_misc/accflush
+
+    chown system system /sys/class/misc/m_acc_misc/accenablenodata
+    chown system system /sys/class/misc/m_acc_misc/accactive
+    chown system system /sys/class/misc/m_acc_misc/accdelay
+    chown system system /sys/class/misc/m_acc_misc/accbatch
+    chown system system /sys/class/misc/m_acc_misc/accflush
+
+    chmod 0660 /sys/class/misc/m_gyro_misc/gyroenablenodata
+    chmod 0660 /sys/class/misc/m_gyro_misc/gyroactive
+    chmod 0660 /sys/class/misc/m_gyro_misc/gyrodelay
+    chmod 0660 /sys/class/misc/m_gyro_misc/gyrobatch
+    chmod 0660 /sys/class/misc/m_gyro_misc/gyroflush
+
+    chown system system /sys/class/misc/m_gyro_misc/gyroenablenodata
+    chown system system /sys/class/misc/m_gyro_misc/gyroactive
+    chown system system /sys/class/misc/m_gyro_misc/gyrodelay
+    chown system system /sys/class/misc/m_gyro_misc/gyrobatch
+    chown system system /sys/class/misc/m_gyro_misc/gyroflush
+
 service rpmb_svc /vendor/bin/rpmb_svc_disabled
     override
     class late_start
@@ -18,3 +63,12 @@ service kisd /vendor/bin/kisd_disabled
     user root
     group system drmrpc
     disabled
+
+service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service
+    override
+    interface android.hardware.sensors@1.0::ISensors default
+    class hal
+    user system
+    group system wakelock uhid context_hub input
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10

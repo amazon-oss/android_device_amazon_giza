@@ -33,6 +33,10 @@ lib/libnvram_daemon_callback.so:vendor/lib/libnvram_daemon_callback.so
 lib/libnvram_platform.so:vendor/lib/libnvram_platform.so
 lib/libnvramagentclient.so:vendor/lib/libnvramagentclient.so
 
+# Sensors
+lib/hw/sensors.mt8163.so:vendor/lib/libsensors.mt8163.so
+lib/libhwm.so:vendor/lib/libhwm.so
+
 # Touch Firmware
 system/etc/firmware/gt9xx_fw.bin:vendor/firmware/gt9xx_fw.bin
 

@@ -37,6 +37,9 @@ function blob_fixup() {
         vendor/lib/libnvramagentclient.so)
             "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             ;;
+        vendor/lib/libsensors.mt8163.so)
+            "${PATCHELF}" --add-needed "libamazonlog.so" "${2}"
+            ;;
     esac
 }
 

@@ -14,3 +14,6 @@ persist.vendor.connsys.patch.version=-1
 persist.vendor.connsys.dynamic.dump=0
 vendor.connsys.driver.ready=no
 ro.vendor.wlan.gen=gen2
+
+# Sensors
+ro.hardware.sensors=amazon_wrapper
