@@ -47,3 +47,7 @@ vendor/firmware/ROMv2_lm_patch_1_0_hdr.bin|a8258acd415c663f08e9ffda326069ddde33f
 vendor/firmware/ROMv2_lm_patch_1_1_hdr.bin|2d8cd43c2f22655eefde17850aff95300e94d71a
 vendor/firmware/WIFI_RAM_CODE_8163|78ba277d9b7af62f2b85e800123745eee6a1f277
 vendor/firmware/WMT_SOC.cfg|9ee55ee0c5b3437d0470599db530a4f33d6995cb
+
+# Thermal
+etc/.tp/thermal.conf:vendor/etc/.tp/thermal.conf
+etc/.tp/thermal.off.conf:vendor/etc/.tp/thermal.off.conf
