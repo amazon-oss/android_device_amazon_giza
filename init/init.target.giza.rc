@@ -45,6 +45,20 @@ on post-fs-data
     chown system system /sys/class/misc/m_gyro_misc/gyrobatch
     chown system system /sys/class/misc/m_gyro_misc/gyroflush
 
+    # create basic filesystem structure
+    mkdir /data/nvram 0771 root system
+    mkdir /data/nvram/media 0771 media audio
+    copy /vendor/etc/fstab.mt8163 /data/nvram/fstab.mt8163
+
+on property:service.nvram_init=Ready
+    setprop vendor.service.nvram_init Ready
+
+service nvram_daemon /vendor/bin/nvram_daemon
+    class main
+    user root
+    group system audio net_bt
+    oneshot
+
 service rpmb_svc /vendor/bin/rpmb_svc_disabled
     override
     class late_start
