@@ -33,6 +33,9 @@ lib/libnvram_daemon_callback.so:vendor/lib/libnvram_daemon_callback.so
 lib/libnvram_platform.so:vendor/lib/libnvram_platform.so
 lib/libnvramagentclient.so:vendor/lib/libnvramagentclient.so
 
+# Touch Firmware
+system/etc/firmware/gt9xx_fw.bin:vendor/firmware/gt9xx_fw.bin
+
 # WMT - from Amazon/karnak/karnak:9/PS7331.4463N/0031575863040:user/amz-p,release-keys
 vendor/bin/wmt_launcher|35bf3450c5fb1f08f2df30c82a795fae548c93b3
 vendor/bin/wmt_loader|1c838246b6029ed73a35a2e944020f71d47db026
