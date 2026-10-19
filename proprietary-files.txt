@@ -24,6 +24,12 @@ lib/libspeech_enh_lib.so:vendor/lib/libspeech_enh_lib.so|43939ddb5d76b4ec9a58b7c
 # Audio (Configs)
 etc/audio_device.xml
 
+# Camera (tuning)
+lib/libcameracustom.so:vendor/lib/libcameracustom_giza.so
+
+# Camera (tuning logic) - from checkers
+-system/vendor/lib/libcameracustom.so:vendor/lib/libcameracustom_n.so|6cf014899b5bcdf53b8373920207741c70f4ea2a|066f7c97af590f60cb9cd70c56279077eae527d0
+
 # NVRAM
 bin/nvram_daemon:vendor/bin/nvram_daemon
 lib/libcustom_nvram.so:vendor/lib/libcustom_nvram.so

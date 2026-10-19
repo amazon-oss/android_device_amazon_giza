@@ -1,0 +1,16 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "libcameracustom",
+    srcs: ["libcameracustom_shim.cpp"],
+    shared_libs: [
+        "libcameracustom_n",
+        "libdl",
+        "liblog",
+    ],
+    compile_multilib: "32",
+    vendor: true,
+}

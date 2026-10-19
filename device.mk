@@ -36,6 +36,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     mt66xx_bt
 
+# Camera
+PRODUCT_PACKAGES += \
+    libcameracustom
+
 # Connsys
 PRODUCT_PACKAGES += \
     mt66xx_common

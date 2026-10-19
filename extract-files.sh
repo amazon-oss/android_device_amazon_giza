@@ -16,6 +16,13 @@ function blob_fixup() {
         vendor/lib/libblisrc32.so)
             sed -i "s/\x1e\x00\x00\x00\x08\x00\x00\x00/\x1e\x00\x00\x00\x0a\x00\x00\x00/" "${2}"
             ;;
+        vendor/lib/libcameracustom_n.so)
+            "${PATCHELF}" --set-soname "libcameracustom_n.so" "${2}"
+            ;;
+        vendor/lib/libcameracustom_giza.so)
+            "${PATCHELF}" --set-soname "libcameracustom_giza.so" "${2}"
+            "${PATCHELF}" --add-needed "libamazonlog.so" "${2}"
+            ;;
         vendor/lib/libaudiocomponentengine.so)
             "${PATCHELF}" --add-needed "libamazonlog.so" "${2}"
             "${PATCHELF}" --add-needed "libutilscallstack.so" "${2}"
