@@ -9,6 +9,24 @@ $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-hea
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    audio.primary.amazon_wrapper
+
+PRODUCT_PACKAGES += \
+    libaudio-resampler \
+    libaudioutils \
+    libaudioroute \
+    libtinyalsa \
+    libamazonlog \
+    libbinder_shim \
+    libcutils_shim
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+
 # Screen
 TARGET_SCREEN_DENSITY := 213
 TARGET_SCREEN_HEIGHT := 1280
