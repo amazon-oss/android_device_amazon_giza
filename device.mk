@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: 2026 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+$(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
+
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
+# Screen
+TARGET_SCREEN_DENSITY := 213
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 800
+
+# Shipping API Level
+PRODUCT_SHIPPING_API_LEVEL := 22
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
+# Vendor partition
+TARGET_HAS_VENDOR_PARTITION := false
+
+# Inherit from mt8163-common
+$(call inherit-product, device/amazon/mt8163-common/mt8163.mk)
+
+# Inherit the proprietary files
+$(call inherit-product, vendor/amazon/giza/giza-vendor.mk)
