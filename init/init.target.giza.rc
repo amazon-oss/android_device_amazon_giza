@@ -59,25 +59,6 @@ service nvram_daemon /vendor/bin/nvram_daemon
     group system audio net_bt
     oneshot
 
-service rpmb_svc /vendor/bin/rpmb_svc_disabled
-    override
-    class late_start
-    group system drmrpc
-    disabled
-
-service securetime /vendor/bin/securetime_disabled
-    override
-    class main
-    user media
-    group mediadrm drmrpc
-    disabled
-
-service kisd /vendor/bin/kisd_disabled
-    override
-    user root
-    group system drmrpc
-    disabled
-
 service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service
     override
     interface android.hardware.sensors@1.0::ISensors default
